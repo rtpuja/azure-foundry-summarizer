@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  main:
+    web-application-type: servlet
+
+azure:
+  openai:
+    endpoint: ${AZURE_OPENAI_ENDPOINT:https://example.cognitiveservices.azure.com}
+    apiKey: ${AZURE_OPENAI_API_KEY:}
+    deployment: ${AZURE_OPENAI_DEPLOYMENT:summarizer-api}
+    apiVersion: ${AZURE_OPENAI_API_VERSION:2025-01-01-preview}
+
+llm:
+  temperature: ${LLM_TEMPERATURE:0.2}
+  maxTokens: ${LLM_MAX_TOKENS:300}
+  requestTimeoutSeconds: ${LLM_TIMEOUT_SECONDS:30}
+
+logging:
+  level:
+    root: INFO
+    com.pooja.summarizer: INFO
